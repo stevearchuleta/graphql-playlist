@@ -6,6 +6,7 @@ const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema} = graphql;
 // dummy data
 var cities = [
     {   
+        id: '01',
         cityName: 'Funchal', 
         population: 111892,
         parishes: [
@@ -24,6 +25,7 @@ var cities = [
         history: ""
     },
     {
+        id: '02',
         cityName: 'Santa Cruz',
         population: 43005,
         parishes: [
@@ -37,6 +39,7 @@ var cities = [
         history: ""
     },
     {
+        id: '03',
         cityName: 'Câmara dos Lobos',
         population: 35666,
         parishes: [
@@ -50,6 +53,7 @@ var cities = [
         history: ""
     },
     {
+        id: '04',
         cityName: 'Machico',
         population: 21828,
         parishes: [
@@ -75,6 +79,7 @@ var cities = [
         history: ""
     },
     {
+        id: '05',
         cityName: 'Calheta',
         population: 11521,
         parishes: [
@@ -91,6 +96,7 @@ var cities = [
         history: ""
     },
     {
+        id: '06',
         cityName: 'Ponta do Sol',
         population: 8862,
         parishes: [
@@ -102,6 +108,7 @@ var cities = [
         history: ""
     },
     {
+        id: '07',
         cityName: 'Santana',
         population: 7719,
         parishes: [
@@ -116,6 +123,7 @@ var cities = [
         history: ""
     },
     {
+        id: '08',
         cityName: 'São Vicente',
         population: 5723,
         parishes: [
@@ -127,6 +135,7 @@ var cities = [
         history: ""
     },
     {
+        id: '09',
         cityName: 'Porto Moniz',
         population: 2711,
         parishes: [
@@ -144,7 +153,7 @@ const CityType = new GraphQLObjectType({
     name: 'City',
     fields: () => ({
         id: {type: GraphQLString},
-        name: {type: GraphQLString},
+        cityName: {type: GraphQLString},
         population: {type: GraphQLInt},
         parishes: {type: GraphQLString},
         geography: {type: GraphQLString},
@@ -160,7 +169,7 @@ const RootQuery = new GraphQLObjectType({
         city: {
             
             type: CityType,
-            args: {name: {type: GraphQLString}},
+            args: {cityName: {type: GraphQLString}},
             
             resolve(parent, args) {
                 // code to get data from db / other source; installed lodash node module (which is the underscore variable)

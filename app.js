@@ -10,7 +10,8 @@ const app = express();
 // The graphqlHTTP function takes a schema (in order to work properly)
 //===============
 app.use('/graphql', graphqlHTTP({
-    schema: schema
+    schema: schema,
+    graphiql: true
 }));
 
 app.listen(5000, () => {
